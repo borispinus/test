@@ -12,7 +12,8 @@ const handler = async (request: NextApiRequest, response: NextApiResponse<any>) 
 
     response.status(200).json({
         local: request.socket.localAddress,
-        remote: request.socket.remoteAddress
+        remote: request.socket.remoteAddress,
+        data: ips.networkInterfaces()
     })
 };
 
